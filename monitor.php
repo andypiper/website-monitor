@@ -26,6 +26,11 @@ foreach($monitors as $name => $url) {
 	curl_setopt($curl, CURLOPT_URL, $url);
 	curl_setopt($curl, CURLOPT_HEADER, true);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	// set a user agent as some sites (DEV.to) appear to block the default
+  curl_setopt($curl, CURLOPT_USERAGENT, "website-monitor/1.0");
+  if ($verbose) {
+		curl_setopt($curl, CURLOPT_VERBOSE, true);
+  }
 	$response = curl_exec($curl);
 	if(curl_exec($curl) === false) {
 		$response_data[$timestamp]['error'] = curl_error($curl);
@@ -37,7 +42,7 @@ foreach($monitors as $name => $url) {
 		$response_data[$timestamp]['time'] = $ms;
 		$response_data[$timestamp]['response'] = $http_code;
 	}
-	
+
 	curl_close($curl);
 	if(file_exists(PATH.'/monitors/'.$name)) {
 		$data = json_decode(file_get_contents(PATH.'/monitors/'.$name), TRUE);

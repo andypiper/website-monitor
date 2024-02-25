@@ -7,7 +7,7 @@
 
 body {
 	font-family: 'Inter', sans-serif;
-	background:#212529;
+	background: #212529;
 	color: #f8f9fa;
 	font-size: 1.3em;
 }
@@ -38,7 +38,8 @@ h2 {
 	color: #fff;
 }
 
-.item p, .item p a {
+.item p,
+.item p a {
 	margin: 0;
 	color: #aaa;
 	font-size: 95%;
@@ -65,18 +66,21 @@ footer {
 	font-size: 90%;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link,
+a:visited,
+a:hover,
+a:active {
 	color: #f8f9fa;
 }
 
 #status {
-	background:  #343a40;
+	background: #343a40;
 	border-radius: .25em;
 	padding: .1em 1em;
 }
 
 #notice {
-	background:  #ffec99;
+	background: #ffec99;
 	color: #000;
 	border-radius: .25em;
 	padding: .1em 1em;
@@ -115,17 +119,33 @@ a:link, a:visited, a:hover, a:active {
 	border-radius: .25em;
 }
 
-.bloop.good { background: #51cf66; }
-.bloop.bad { background: #fa5252; }
-.bloop.meh { background: #ffd43b; }
+.bloop.good {
+	background: #51cf66;
+}
+
+.bloop.bad {
+	background: #fa5252;
+}
+
+.bloop.meh {
+	background: #ffd43b;
+}
 
 .item {
 	margin: 3em 0;
 }
 
-.good { color: #51cf66; }
-.bad { color: #fa5252; }
-.meh { color: #ffd43b; }
+.good {
+	color: #51cf66;
+}
+
+.bad {
+	color: #fa5252;
+}
+
+.meh {
+	color: #ffd43b;
+}
 
 .bloops {
 	position: relative;
@@ -133,11 +153,17 @@ a:link, a:visited, a:hover, a:active {
 
 .bloop_info {
 	position: absolute;
-	top: 2em; left: 0em;
+	top: 2em;
+	left: 0em;
 	background: #fff;
 	padding: 1em;
 	opacity: 1;
 	z-index: 100;
+}
+
+.incident:focus,
+.item:focus {
+	outline: 2px solid blue;
 }
 
 @media (max-width: 500px) {
